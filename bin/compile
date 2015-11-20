@@ -184,7 +184,7 @@ source $BIN_DIR/steps/pip-install
 sub-env $BIN_DIR/steps/collectstatic
 
 # Django migrate support
-$BIN_DIR/steps/migrate
+source $BIN_DIR/steps/migrate
 
 # ### Finalize
 #
