@@ -180,8 +180,8 @@ source $BIN_DIR/steps/gdal
 # Install dependencies with Pip.
 source $BIN_DIR/steps/pip-install
 
-# Django collectstatic support.
-sub-env $BIN_DIR/steps/collectstatic
+# Django compress support.
+sub-env $BIN_DIR/steps/compress
 
 # Django migrate support
 source $BIN_DIR/steps/migrate
