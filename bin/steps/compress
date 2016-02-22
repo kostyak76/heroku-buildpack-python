@@ -10,10 +10,11 @@ bpwatch start compress
 
 if [ ! "$DISABLE_COMPRESS" ] && [ -f "$MANAGE_FILE" ]; then
     puts-step "Running compress"
-
-    python $MANAGE_FILE compress
-
+    set +e
+    puts-cmd "python $MANAGE_FILE compress --force"
+    set -e
     puts-step "Fiinishing compress"
+    echo
 fi
 
 bpwatch stop copmress
