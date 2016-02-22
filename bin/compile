@@ -207,11 +207,12 @@ source $BIN_DIR/steps/gdal
 # Install dependencies with Pip.
 source $BIN_DIR/steps/pip-install
 
-# Django compress support.
+# Django collectstatic support.
+sub-env $BIN_DIR/steps/collectstatic
+
+# Django collectstatic support.
 sub-env $BIN_DIR/steps/compress
 
-# Django migrate support
-source $BIN_DIR/steps/migrate
 
 # Create .profile script for application runtime environment variables.
 set-env PATH '$HOME/.heroku/python/bin:$PATH'
@@ -266,4 +267,3 @@ if [[ ! "$DOCKER_BUILD" ]]; then
   bpwatch stop anvil_appdir_commit
   bpwatch stop compile
 fi
-

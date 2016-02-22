@@ -12,6 +12,7 @@ if [ ! "$DISABLE_COMPRESS" ] && [ -f "$MANAGE_FILE" ]; then
     puts-step "Running compress"
     set +e
     puts-cmd "python $MANAGE_FILE compress --force"
+    python $MANAGE_FILE compress --force
     set -e
     puts-step "Fiinishing compress"
     echo
